@@ -1,6 +1,6 @@
-##Diego Perdomo Salcedo (A01709150)
+## Diego Perdomo Salcedo (A01709150)
 
-###TicTacToe Code
+### TicTacToe Code
 
     from turtle import *
 
