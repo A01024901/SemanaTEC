@@ -21,7 +21,7 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 
-#Aquí define el objeto cuadrado 
+#Aquí define el objeto cuadrado que se usa para el diseño base de el juego demoria ya que se compone por cuadros
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -35,16 +35,21 @@ def square(x, y):
         left(90)
     end_fill()
 
+#Por el uso de def podemos ver que usa estas funciones para abreviar y controlar procesos como el uso de las fichas/botones
+#Convierte las coordenadas al numero de boton o recuadro 
 
 def index(x, y):
     """Convert (x, y) coordinates to tiles index."""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
+#Convierte el numero de recuadro a cordenadas 
 
 def xy(count):
     """Convert tiles count to (x, y) coordinates."""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
+#Es la funcion que se usa para marcar el punto de input para el uso de el juego. Y que el usuario marque un punto 
+#para seguir el juego de memoria 
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
