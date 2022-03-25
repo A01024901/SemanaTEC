@@ -4,7 +4,6 @@ from freegames import line
 
 
 def grid():
-    """Draw tic-tac-toe grid."""
     line(-67, 200, -67, -200)
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
@@ -12,14 +11,12 @@ def grid():
 
 
 def drawx(x, y):
-    """Draw X player."""
     color("blue")
     line(x, y, x + 100, y + 100)
     line(x, y + 100, x + 100, y)
 
 
 def drawo(x, y):
-    """Draw O player."""
     color("red")
     up()
     goto(x + 58, y + 2)
@@ -28,16 +25,14 @@ def drawo(x, y):
 
 
 def floor(value):
-    """Round value down to grid with square size 133."""
     return ((value + 185) // 133) * 133 - 185
 
 
 state = {'player': 0}
 players = [drawx, drawo]
-board=[-1,-1,-1,-1,-1,-1,-1,-1,-1]
+
 
 def tap(x, y):
-    """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
     print(x,y)
@@ -68,6 +63,7 @@ def box(x, y):
        return 7 
     if x==81 and y==-185:
        return 8
+
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
