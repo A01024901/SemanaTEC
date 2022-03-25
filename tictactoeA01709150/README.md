@@ -91,8 +91,5 @@ Following functions make the code run.
     onscreenclick(tap)
     done()
 
-This is what the game looks like: 
 
-
-[![TicTacToe](file:///Users/diegoperdomosalcedo/Desktop/TicTacToe.jpg "TicTacToe")](http://file:///Users/diegoperdomosalcedo/Desktop/TicTacToe.jpg "TicTacToe")
 
