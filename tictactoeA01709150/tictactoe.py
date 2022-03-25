@@ -52,7 +52,22 @@ def tap(x, y):
 def box(x, y):
     if x==-52 and y==-52:
        return 4
-
+    if x==-185 and y==81:
+       return 0
+    if x==-52 and y==81:
+       return 1
+    if x==81 and y==81:
+       return 2
+    if x==-185 and y==-52:
+       return 3
+    if x==81 and y==-52:
+       return 5
+    if x==-185 and y==-185:
+       return 6
+    if x==-52 and y==-185:
+       return 7 
+    if x==81 and y==-185:
+       return 8
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
