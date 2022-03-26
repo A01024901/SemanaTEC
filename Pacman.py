@@ -18,7 +18,9 @@ state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
+#posicion inicial de pacman
 pacman = vector(0, 0)
+#se crean fantasmas
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
     [vector(-180, -160), vector(0, 5)],
@@ -28,7 +30,7 @@ ghosts = [
     [vector(100, 100), vector(5,0)]
 ]
 # fmt: off
-tiles = [
+tiles = [ #Tablero
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1,
@@ -90,7 +92,7 @@ def valid(point):
     return point.x % 20 == 0 or point.y % 20 == 0
 
 
-def world():
+def world(): 
     """Draw world using path."""
     bgcolor('black')
     path.color('blue')
@@ -109,7 +111,7 @@ def world():
                 path.dot(2, 'white')
 
 
-def move():
+def move(): #Movimiento del pacman con teclado
     """Move pacman and all ghosts."""
     writer.undo()
     writer.write(state['score'])
@@ -129,7 +131,7 @@ def move():
         square(x, y)
 
     up()
-    goto(pacman.x + 15, pacman.y + 15) 
+    goto(pacman.x + 15, pacman.y + 15) #Velocidad de pacman
     dot(20, 'yellow')
 
     for point, course in ghosts:
@@ -149,7 +151,7 @@ def move():
             course.y = plan.y
 
         up()
-        goto(point.x + 15, point.y + 15)
+        goto(point.x + 15, point.y + 15)#Velocidad de fantasma
         dot(20, 'red')
 
     update()
